@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday My Wify ❤️</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:#050008;
+}
+
+#app{
+    height:100vh;
+    width:100vw;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #9b3cff 0%,
+            #54117d 30%,
+            #200632 65%,
+            #050008 100%
+        );
+
+    transition:background 1.5s ease;
+}
+
+#app.lightsOff{
+    background:#000;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    opacity:.7;
+
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.15;
+        transform:scale(.5);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.5);
+    }
+}
+
+
+/* =========================
+   PASSWORD SCREEN
+========================= */
+
+.passwordScreen{
+    position:absolute;
+    inset:0;
+    z-index:9999;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    padding:20px;
+}
+
+.passwordBox{
+    width:min(500px,90vw);
+    padding:35px 25px;
+
+    border-radius:25px;
+
+    background:rgba(0,0,0,.25);
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,.15),
+        0 0 80px rgba(155,60,255,.35);
+
+    backdrop-filter:blur(10px);
+}
+
+.passwordTitle{
+    font-size:clamp(30px,7vw,55px);
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+    text-shadow:
+        0 0 15px #ff7bd5,
+        0 0 30px #9b3cff;
+}
+
+.passwordSubtitle{
+    font-size:clamp(16px,3vw,22px);
+    line-height:1.5;
+}
+
+.passwordInput{
+    width:220px;
+    max-width:80%;
+
+    margin-top:22px;
+    padding:14px 18px;
+
+    border:none;
+    outline:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.12);
+    border:2px solid rgba(255,255,255,.25);
+
+    color:white;
+
+    text-align:center;
+    font-size:22px;
+
+    letter-spacing:7px;
+}
+
+.passwordInput::placeholder{
+    color:rgba(255,255,255,.6);
+    letter-spacing:2px;
+}
+
+.passwordInput:focus{
+    border-color:#ff9ddd;
+
+    box-shadow:
+        0 0 15px rgba(255,120,210,.5);
+}
+
+.passwordButton{
+    margin-top:18px;
+
+    padding:13px 25px;
+
+    border:none;
+    border-radius:30px;
+
+    background:linear-gradient(
+        90deg,
+        #ff62b7,
+        #9b3cff
+    );
+
+    color:white;
+
+    font-size:17px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 20px rgba(255,80,180,.4);
+
+    transition:.25s;
+}
+
+.passwordButton:hover{
+    transform:scale(1.06);
+}
+
+.passwordError{
+    min-height:25px;
+
+    margin-top:12px;
+
+    color:#ffb5dd;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+#content{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+
+/* =========================
+   SCREEN
+========================= */
+
+.screen{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+
+    z-index:10;
+}
+
+.title{
+    font-size:clamp(35px,7vw,70px);
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px #ff7bd5,
+        0 0 30px #9b3cff,
+        0 0 50px #ff35b9;
+}
+
+.subtitle{
+    max-width:850px;
+
+    font-size:clamp(17px,3vw,25px);
+
+    line-height:1.6;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.35);
+}
+
+button{
+    margin-top:25px;
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4fa3,
+            #9c4dff
+        );
+
+    box-shadow:
+        0 0 20px rgba(255,80,180,.5);
+
+    transition:.25s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+button.no{
+    background:
+        linear-gradient(
+            90deg,
+            #555,
+            #222
+        );
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon{
+    position:absolute;
+
+    width:65px;
+    height:80px;
+
+    border-radius:50%;
+
+    z-index:4;
+
+    bottom:-120px;
+
+    animation:
+        balloonFloat 5s ease-in-out infinite;
+}
+
+.balloon:after{
+    content:"";
+
+    position:absolute;
+
+    width:2px;
+    height:120px;
+
+    background:white;
+
+    top:75px;
+    left:50%;
+
+    opacity:.5;
+}
+
+.balloon.pink{
+    background:#ff4fa3;
+}
+
+.balloon.purple{
+    background:#9c4dff;
+}
+
+.balloon.blue{
+    background:#45c7ff;
+}
+
+.balloon.yellow{
+    background:#ffd34e;
+}
+
+.balloon.red{
+    background:#ff4d5e;
+}
+
+@keyframes balloonFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-30px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti{
+    position:absolute;
+
+    width:8px;
+    height:15px;
+
+    z-index:3;
+
+    top:-30px;
+
+    animation:
+        confettiFall linear infinite;
+}
+
+@keyframes confettiFall{
+
+    from{
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floatingHeart{
+    position:absolute;
+
+    z-index:2;
+
+    font-size:25px;
+
+    animation:
+        heartFloat 5s linear infinite;
+}
+
+@keyframes heartFloat{
+
+    from{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cakeWrap{
+    position:absolute;
+
+    left:50%;
+    top:43%;
+
+    transform:
+        translate(-50%,-50%);
+
+    z-index:5;
+
+    animation:
+        cakeAppear 1s ease;
+}
+
+@keyframes cakeAppear{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            scale(.2);
+
+        opacity:0;
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+
+        opacity:1;
+    }
+
+}
+
+.cake{
+    position:relative;
+
+    width:320px;
+    height:230px;
+}
+
+.layer{
+    position:absolute;
+
+    left:20px;
+
+    width:280px;
+
+    border-radius:
+        20px 20px 15px 15px;
+}
+
+.layer.bottom{
+    bottom:10px;
+
+    height:80px;
+
+    background:
+        linear-gradient(
+            #ff5ba9,
+            #d62979
+        );
+}
+
+.layer.middle{
+    bottom:75px;
+
+    left:35px;
+
+    width:250px;
+
+    height:65px;
+
+    background:
+        linear-gradient(
+            #ff80bf,
+            #e13a8a
+        );
+}
+
+.frosting{
+    position:absolute;
+
+    left:45px;
+    bottom:125px;
+
+    width:230px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:#fff5fb;
+
+    z-index:3;
+}
+
+.drip{
+    position:absolute;
+
+    width:35px;
+    height:40px;
+
+    background:#fff5fb;
+
+    border-radius:
+        0 0 20px 20px;
+}
+
+.drip:nth-child(1){
+    left:20px;
+    top:25px;
+}
+
+.drip:nth-child(2){
+    left:75px;
+    top:20px;
+}
+
+.drip:nth-child(3){
+    left:130px;
+    top:27px;
+}
+
+.drip:nth-child(4){
+    left:180px;
+    top:18px;
+}
+
+.cherry{
+    position:absolute;
+
+    width:15px;
+    height:15px;
+
+    border-radius:50%;
+
+    background:#ff304f;
+
+    top:-8px;
+}
+
+.cherry:nth-child(5){
+    left:45px;
+}
+
+.cherry:nth-child(6){
+    left:110px;
+}
+
+.cherry:nth-child(7){
+    left:170px;
+}
+
+.candle{
+    position:absolute;
+
+    width:18px;
+    height:60px;
+
+    left:50%;
+    bottom:170px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #ffdb65,
+            #ffdb65 8px,
+            #ff6bb5 8px,
+            #ff6bb5 16px
+        );
+
+    border-radius:5px;
+
+    z-index:5;
+}
+
+.flame{
+    position:absolute;
+
+    width:22px;
+    height:32px;
+
+    left:50%;
+    top:-28px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50% 50% 50% 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 70%,
+            #fff 0%,
+            #ffd34e 35%,
+            #ff6b35 70%,
+            transparent 72%
+        );
+
+    animation:
+        flame 0.7s infinite alternate;
+}
+
+@keyframes flame{
+
+    from{
+        transform:
+            translateX(-50%)
+            scale(.9);
+    }
+
+    to{
+        transform:
+            translateX(-50%)
+            scale(1.1);
+    }
+
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final{
+    z-index:10;
+
+    overflow-y:auto;
+
+    justify-content:flex-start;
+
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
+.finalCard{
+
+    width:min(900px,94vw);
+
+    padding:30px;
+
+    border-radius:30px;
+
+    background:
+        rgba(0,0,0,.22);
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 40px rgba(255,70,180,.25);
+
+    backdrop-filter:blur(10px);
+}
+
+.finalTitle{
+
+    font-size:
+        clamp(35px,7vw,65px);
+
+    font-weight:bold;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px #ff35b9,
+        0 0 30px #9b3cff;
+
+    margin-bottom:25px;
+}
+
+.finalText{
+
+    font-size:
+        clamp(16px,2.2vw,21px);
+
+    line-height:1.8;
+
+    color:white;
+
+    text-align:center;
+}
+
+.signature{
+
+    margin-top:25px;
+
+    font-size:20px;
+
+    color:#ff9bdc;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .cake{
+        transform:scale(.75);
+    }
+
+    .cakeWrap{
+        top:40%;
+    }
+
+    .balloon{
+        width:48px;
+        height:62px;
+    }
+
+    .finalCard{
+        padding:20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+    <div id="content"></div>
+
+</div>
+
+
+<audio id="music" loop>
+
+    <source
+        src="birthday.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<script>
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const app =
+    document.getElementById("app");
+
+const content =
+    document.getElementById("content");
+
+const music =
+    document.getElementById("music");
+
+
+/* =========================
+   SCREEN
+========================= */
+
+function screen(html){
+
+    content.innerHTML = `
+
+        <div class="screen">
+
+            ${html}
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================
+   PASSWORD SCREEN
+========================= */
+
+const SECRET_PASSWORD = "0510";
+
+
+function passwordScreen(){
+
+    content.innerHTML = `
+
+        <div class="passwordScreen">
+
+            <div class="passwordBox">
+
+                <div class="passwordTitle">
+
+                    🔐❤️
+
+                </div>
+
+                <div class="passwordSubtitle">
+
+                    This surprise is only for you 🥺❤️
+
+                    <br><br>
+
+                    Enter the secret password
+                    to open it 🎁
+
+                </div>
+
+                <input
+                    id="passwordInput"
+                    class="passwordInput"
+                    type="password"
+                    inputmode="numeric"
+                    maxlength="4"
+                    placeholder="••••"
+                    autocomplete="off"
+                    onkeydown="
+                        if(event.key==='Enter')
+                        checkPassword()
+                    "
+                >
+
+                <br>
+
+                <button
+                    class="passwordButton"
+                    onclick="checkPassword()">
+
+                    OPEN MY GIFT 💗
+
+                </button>
+
+                <div
+                    id="passwordError"
+                    class="passwordError">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    setTimeout(()=>{
+
+        const input =
+            document.getElementById(
+                "passwordInput"
+            );
+
+        if(input){
+
+            input.focus();
+
+        }
+
+    },100);
+
+}
+
+
+function checkPassword(){
+
+    const input =
+        document.getElementById(
+            "passwordInput"
+        );
+
+    const error =
+        document.getElementById(
+            "passwordError"
+        );
+
+
+    if(
+        input.value ===
+        SECRET_PASSWORD
+    ){
+
+        error.textContent="";
+
+        startBirthday();
+
+    }
+
+    else{
+
+        error.textContent =
+            "Wrong password 😝 Try again!";
+
+        input.value="";
+
+        input.focus();
+
+    }
+
+}
+
+
+/* =========================
+   BIRTHDAY START
+========================= */
+
+function startBirthday(){
+
+    screen(`
+
+        <div class="title">
+
+            Madam Jii ❤️
+
+        </div>
+
+        <div class="subtitle">
+
+            I love you ❤️
+
+            <br><br>
+
+            It's your birthday
+            yahuuuuuu 🎉🎂
+
+        </div>
+
+    `);
+
+
+    setTimeout(()=>{
+
+        screen(`
+
+            <div class="title">
+
+                It's Your Birthday 🎂
+
+            </div>
+
+            <div class="subtitle">
+
+                And I have a special
+                gift for you 🎁
+
+                <br><br>
+
+                Do you wanna see it?
+
+                <br>
+
+                <b>
+                    Kuchu Puchu ❤️🥺
+                </b>
+
+            </div>
+
+        `);
+
+
+        setTimeout(()=>{
+
+            screen(`
+
+                <div class="title">
+
+                    My Wify ❤️
+
+                </div>
+
+                <div class="subtitle">
+
+                    Do you wanna see it?
+
+                </div>
+
+                <button onclick="ready()">
+
+                    YES ❤️
+
+                </button>
+
+                <button
+                    class="no"
+                    onclick="nope()">
+
+                    NO 😭
+
+                </button>
+
+            `);
+
+        },3000);
+
+    },3000);
+
+}
+
+
+/* =========================
+   NO
+========================= */
+
+function nope(){
+
+    screen(`
+
+        <div class="title">
+
+            Oiiiii 😭
+
+        </div>
+
+        <div class="subtitle">
+
+            No bolle hobe na
+            Madam Jii 😭❤️
+
+            <br>
+
+            Ekbar YES bolo na 🥺
+
+        </div>
+
+        <button onclick="ready()">
+
+            YES ❤️
+
+        </button>
+
+    `);
+
+}
+
+
+/* =========================
+   READY
+========================= */
+
+function ready(){
+
+    screen(`
+
+        <div class="title">
+
+            Ready? ❤️
+
+        </div>
+
+        <div class="subtitle">
+
+            Ready to see it,
+
+            <br>
+
+            Madam Jii? 🥺
+
+        </div>
+
+        <button onclick="lightsOff()">
+
+            YESSS ❤️
+
+        </button>
+
+    `);
+
+}
+
+
+/* =========================
+   LIGHTS OFF
+========================= */
+
+function lightsOff(){
+
+    app.classList.add("lightsOff");
+
+    screen(`
+
+        <div class="title">
+
+            🌙
+
+        </div>
+
+        <div class="subtitle">
+
+            Lights off...
+
+            <br><br>
+
+            Something magical
+            is coming ✨
+
+        </div>
+
+        <button onclick="lightsOn()">
+
+            LIGHTS ON 💡
+
+        </button>
+
+    `);
+
+}
+
+
+/* =========================
+   LIGHTS ON
+========================= */
+
+function lightsOn(){
+
+    app.classList.remove("lightsOff");
+
+    screen(`
+
+        <div class="title">
+
+            ✨ LIGHTS ON ✨
+
+        </div>
+
+        <div class="subtitle">
+
+            Now let's make it
+            beautiful ❤️
+
+        </div>
+
+        <button onclick="musicScreen()">
+
+            PLAY MUSIC 🎵
+
+        </button>
+
+    `);
+
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+function musicScreen(){
+
+    music.play().catch(()=>{});
+
+    screen(`
+
+        <div class="title">
+
+            🎵
+
+        </div>
+
+        <div class="subtitle">
+
+            Music is ready...
+
+            <br>
+
+            Now let's decorate! 🎀
+
+        </div>
+
+        <button onclick="decorate()">
+
+            DECORATE 🎀
+
+        </button>
+
+    `);
+
+}
+
+
+/* =========================
+   DECORATE
+========================= */
+
+function decorate(){
+
+    content.innerHTML="";
+
+
+    for(let i=0;i<30;i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.className =
+            "floatingHeart";
+
+        heart.innerHTML =
+            [
+                "❤️",
+                "💗",
+                "💖",
+                "💕",
+                "✨"
+            ][
+                Math.floor(
+                    Math.random()*5
+                )
+            ];
+
+        heart.style.left =
+            Math.random()*100+"%";
+
+        heart.style.bottom =
+            "-50px";
+
+        heart.style.animationDelay =
+            Math.random()*3+"s";
+
+        app.appendChild(heart);
+
+    }
+
+
+    createConfetti(130);
+
+
+    setTimeout(()=>{
+
+        screen(`
+
+            <div class="title">
+
+                HAPPY BIRTHDAY 🎉
+
+            </div>
+
+            <div class="subtitle">
+
+                Everything is ready
+
+                <br>
+
+                for my beautiful Wify ❤️
+
+            </div>
+
+            <button onclick="balloons()">
+
+                FLY THE BALLOONS 🎈
+
+            </button>
+
+        `);
+
+    },1800);
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti(amount){
+
+    for(let i=0;i<amount;i++){
+
+        const c =
+            document.createElement("div");
+
+        c.className="confetti";
+
+        c.style.left =
+            Math.random()*100+"%";
+
+        c.style.background =
+            [
+                "#ff4fa3",
+                "#9c4dff",
+                "#ffd34e",
+                "#45c7ff",
+                "#ffffff"
+            ][
+                Math.floor(
+                    Math.random()*5
+                )
+            ];
+
+        c.style.animationDuration =
+            (3+Math.random()*4)+"s";
+
+        c.style.animationDelay =
+            Math.random()*2+"s";
+
+        app.appendChild(c);
+
+    }
+
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+function balloons(){
+
+    const colors=[
+
+        "pink",
+        "purple",
+        "blue",
+        "yellow",
+        "red",
+        "pink",
+        "purple",
+        "blue",
+        "yellow",
+        "red"
+
+    ];
+
+
+    colors.forEach((color,i)=>{
+
+        const balloon =
+            document.createElement("div");
+
+        balloon.className =
+            "balloon "+color;
+
+        balloon.style.left =
+            (3+i*10)+"%";
+
+        balloon.style.animationDelay =
+            (i*.25)+"s";
+
+        app.appendChild(balloon);
+
+    });
+
+
+    createConfetti(90);
+
+
+    screen(`
+
+        <div class="title">
+
+            🎈🎈🎈
+
+        </div>
+
+        <div class="subtitle">
+
+            Look at them flying! ❤️
+
+            <br><br>
+
+            The birthday celebration
+            has begun! 🎉
+
+        </div>
+
+        <button onclick="cake()">
+
+            LET'S CUT THE CAKE,
+            SONA 🎂
+
+        </button>
+
+    `);
+
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+function cake(){
+
+    content.innerHTML="";
+
+
+    const wrapper =
+        document.createElement("div");
+
+    wrapper.className="cakeWrap";
+
+
+    wrapper.innerHTML=`
+
+        <div class="cake">
+
+            <div class="candle">
+
+                <div class="flame"></div>
+
+            </div>
+
+
+            <div class="frosting">
+
+                <div class="drip"></div>
+                <div class="drip"></div>
+                <div class="drip"></div>
+                <div class="drip"></div>
+
+                <div class="cherry"></div>
+                <div class="cherry"></div>
+                <div class="cherry"></div>
+
+            </div>
+
+
+            <div class="layer middle"></div>
+
+            <div class="layer bottom"></div>
+
+        </div>
+
+    `;
+
+
+    app.appendChild(wrapper);
+
+
+    createConfetti(140);
+
+
+    setTimeout(()=>{
+
+        /*
+         * IMPORTANT:
+         * Remove the cake before showing
+         * the message so it cannot cover it.
+         */
+
+        wrapper.remove();
+
+
+        screen(`
+
+            <div class="title">
+
+                🎂❤️
+
+            </div>
+
+            <div class="subtitle">
+
+                And Kuchu Puchu...
+
+                <br>
+
+                I have a very special
+                message for you.
+
+                <br><br>
+
+                <b>
+                    Something from my heart ❤️
+                </b>
+
+            </div>
+
+            <button onclick="finalMessage()">
+
+                OPEN MY MESSAGE 💌
+
+            </button>
+
+        `);
+
+    },2500);
+
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+function finalMessage(){
+
+    content.innerHTML=`
+
+        <div class="screen final">
+
+            <div class="finalCard">
+
+                <div style="
+                    font-size:48px;
+                    margin-bottom:15px;
+                ">
+
+                    💗✨🎂✨💗
+
+                </div>
+
+
+                <div class="finalTitle">
+
+                    Happy Birthday
+                    <br>
+
+                    My Wify ❤️
+
+                </div>
+
+
+                <div class="finalText">
+
+                    <b>
+
+                        Happy Birthday to my Wify,
+                        my life, my love ❤️
+
+                    </b>
+
+                    <br><br>
+
+                    With whom I want to spend my
+                    <b>janmo janam</b> ♾️
+
+                    <br>
+
+                    And I will surely,
+                    because God is with us. 🧿🙏❤️
+
+                    <br><br>
+
+                    Kuchu Puchu,
+
+                    <br>
+
+                    I love you so much Sona
+                    😘🧿♥️♾️
+
+                    <br><br>
+
+                    Ami jani tui bristi te
+                    vijte pochondo koris,
+                    ar ami o kori. 🌧️❤️
+
+                    <br>
+
+                    Kintu sob somoy vijle
+                    sorir kharap hobe,
+
+                    <br>
+
+                    ar ice cream, cold drinks
+                    o sob somoy khele
+                    sorir kharap hobe. 😁
+
+                    <br><br>
+
+                    But I am there,
+                    not to fear. ❤️
+
+                    <br>
+
+                    Ami achi tor pase,
+                    tai eto tension kiser? 😁🧿
+
+                    <br><br>
+
+                    Ajke amar Janur birthday,
+
+                    <br>
+
+                    amar Jaan tui Sona
+                    😘🧿♥️♾️
+
+                    <br><br>
+
+                    Ajke ja iccha kha —
+                    <b>FULL PERMISSION! 😁😁🎂</b>
+
+                    <br><br>
+
+                    Kintu kintu... 😁
+
+                    <br>
+
+                    Bristi jodi pore
+                    besi vijbi na,
+                    thik ache? 🌧️❤️
+
+                    <br><br>
+
+                    Ami to tor e,
+
+                    <br>
+
+                    ar tui to amar e Sona
+                    😘🧿♥️♾️
+
+                    <br><br>
+
+                    Ami tor pase sob somoy achi,
+
+                    <br>
+
+                    chilam, achi, thakbo. ❤️
+
+                    <br><br>
+
+                    Tor prottekta success-e
+                    ami tor biggest supporter. 🧿✨
+
+                    <br>
+
+                    Tor sob sukhe,
+                    sob dukhe
+                    ami tor pase thakbo. ❤️
+
+                    <br><br>
+
+                    Ar Thakur to achen-i. 🙏🧿
+
+                    <br>
+
+                    Uni amader ashirbad korun
+                    ar sobkichu sundor kore din. ❤️♾️
+
+                    <br><br>
+
+                    Ar taratari sei din asuk,
+
+                    <br>
+
+                    jokhon apnake amar Rani,
+
+                    <br>
+
+                    amar mayer sommanio bouma,
+
+                    <br>
+
+                    ar amar sommanio bou
+                    hisebe pabo. 🧿😘♥️♾️
+
+                    <br><br>
+
+                    Then dujon mile
+                    ghurte jabo edik odik... 🌍❤️
+
+                    <br><br>
+
+                    <b>
+
+                        I Love You ❤️
+
+                        <br>
+
+                        I Love You
+                        😘🧿♥️♾️
+
+                    </b>
+
+                    <br><br>
+
+                    Umaaaaaaaaaa
+                    😘🧿♥️♾️
+
+                    <br>
+
+                    Umaaaaaaaaaa
+                    😘🧿♥️♾️
+
+                    <br><br>
+
+                    <b style="
+                        font-size:28px;
+                        color:#ff9bdc;
+
+                        text-shadow:
+                            0 0 10px #ff35b9,
+                            0 0 25px #ff35b9;
+                    ">
+
+                        Baki...
+
+                        <br>
+
+                        I Love You,
+                        My Wify
+                        😘🧿♥️♾️
+
+                    </b>
+
+                </div>
+
+
+                <div class="signature">
+
+                    Forever yours ❤️
+
+                    <br>
+
+                    — Aniket
+
+                </div>
+
+
+                <div style="
+                    margin-top:25px;
+                    font-size:40px;
+                ">
+
+                    🎈💖✨🌸✨💖🎈
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    createConfetti(200);
+
+
+    for(let i=0;i<40;i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.className =
+            "floatingHeart";
+
+        heart.innerHTML =
+            [
+                "❤️",
+                "💗",
+                "💖",
+                "💕",
+                "🧿",
+                "✨"
+            ][
+                Math.floor(
+                    Math.random()*6
+                )
+            ];
+
+        heart.style.left =
+            Math.random()*100+"%";
+
+        heart.style.bottom =
+            "-30px";
+
+        heart.style.animationDelay =
+            Math.random()*4+"s";
+
+        app.appendChild(heart);
+
+    }
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+passwordScreen();
+
+</script>
+
+</body>
+</html>
